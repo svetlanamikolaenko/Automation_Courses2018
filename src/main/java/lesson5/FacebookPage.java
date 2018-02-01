@@ -21,7 +21,8 @@ public class FacebookPage {
         WebElement lastbame = driver.findElement(By.cssSelector("[name='lastname']"));
         WebElement mobilePhone = driver.findElement(By.cssSelector("[name^='reg_ema']"));
         WebElement password = driver.findElement(By.cssSelector("[name*='pass']"));
-        WebElement date = driver.findElement(By.cssSelector("#day"));
+        WebElement date;
+        date = driver.findElement(By.cssSelector("#day"));
         WebElement month = driver.findElement(By.cssSelector("#month"));
         WebElement year = driver.findElement(By.cssSelector("#year"));
         WebElement sex = driver.findElement(By.cssSelector("[name='sex'][value='1']"));

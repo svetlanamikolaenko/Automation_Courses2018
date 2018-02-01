@@ -24,8 +24,8 @@ public class LiniaKino {
     @Test
     public void myHomeWork3() throws InterruptedException {
         driver.get("http://liniakino.com/showtimes/aladdin/");
-        // driver.findElement(By.xpath("//*[@id='closeButton']/b")).click();
-        driver.findElement(By.xpath("//*[@class='showtimes-list']//*[@class='showtime-movie'][1]//*[contains(@class,'showtime-day')][1]//*[@class='showtime-item'][2]/a")).click();
+        //driver.findElement(By.xpath("//*[@id='closeButton']/b")).click();
+        driver.findElement(By.xpath("//*[@id=\"content-inner\"]/div/ul/li[1]/div[2]/div[1]/div/ul/li/a")).click();
         WebElement hallFrame = driver.findElement(By.xpath("//*[@class='arcticmodal-container_i']//iframe"));
         driver.switchTo().frame(hallFrame);
         Thread.sleep(3000);
