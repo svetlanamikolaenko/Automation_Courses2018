@@ -55,10 +55,24 @@ public class MainClass {
         listOne.removeNumber(0);
         listOne.removeNumber(0);
         listOne.getValue(5);
+        int b = listOne.getValue(5);
+        System.out.println(b);
 
+
+        MyList listTwo = new MyList();
+        listTwo.addNumber(42);
+        listTwo.addNumber(43);
+        listTwo.addNumber(44);
 
         listOne.removeNumber(5);
 
+        listOne.addAll(listTwo);
 
+        MyList listThree = new MyList();
+        for (int i = 0; i < 1000; i = i + 2){
+            listThree.addNumber(i);
+
+        }
+        listOne.printList();
     }
 }

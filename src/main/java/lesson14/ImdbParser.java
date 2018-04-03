@@ -58,7 +58,15 @@ public class ImdbParser {
         Document doc = Jsoup.parse(html);
         movie.title = doc.select(".title_wrapper h1").get(0).text();
         movie.rating = Double.parseDouble(doc.select(".imdbRating [itemprop='ratingValue']").get(0).text());
-        movie.metascore = Double.parseDouble(doc.select(".metacriticScore span").get(0).text());
+        Elements elements = doc.select(".metacriticScore span");
+        try {
+            Element element = elements.get(0);
+            movie.metascore = Double.parseDouble(element.text());
+        } catch (IndexOutOfBoundsException e) {
+
+        }
+
+
         // movie.directot = doc.select()
         movie.actors = getActors(doc);
 

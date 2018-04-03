@@ -41,8 +41,9 @@ public class MyList {
     }
 
     public Integer getValue(int index) {
-        for (int i = 0; i< data.length ; i++){
-            index = i;
+        if (index > realCount) {
+            System.out.println("no number");
+            return null;
         }
         return data[index];
 
@@ -55,7 +56,21 @@ public class MyList {
     }
 
     public void addAll(MyList anotherList) {
-
+//        for (int i =0; i < anotherList.getSize(); i++){
+//           addNumber(anotherList.getValue(i));
+//        }
+        int delta = anotherList.getSize() - (data.length - realCount);
+        if (delta > 0) {
+            Integer[] dataNew = new Integer[data.length + delta];
+            for (int i = 0; i < data.length; i++) {
+                dataNew[i] = data[i];
+            }
+            data = dataNew;
+        } else {
+            for (int i = 0; i < anotherList.getSize(); i++) {
+                addNumber(anotherList.getValue(i));
+            }
+        }
     }
 
 
